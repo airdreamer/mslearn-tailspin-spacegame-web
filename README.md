@@ -1,4 +1,5 @@
 
+[![Build Status](https://dev.azure.com/zhonghuihu/SpaceGame-Web-Pipeline/_apis/build/status/airdreamer.mslearn-tailspin-spacegame-web?branchName=main)](https://dev.azure.com/zhonghuihu/SpaceGame-Web-Pipeline/_build/latest?definitionId=7&branchName=main)
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a

@@ -38,6 +38,19 @@ steps:
   workingDirectory: $(wwwrootDir)
 
 - task: NuGetCommand@2
+  displayName: 'NuGet authenticate'
+  inputs:
+    command: custom
+    arguments: sources update -Name "MyFeed" -Username "this_value_could_anything" -Password "$(System.AccessToken)" -StorePasswordInClearText -ConfigFile "nuget.config"
+
+- task: NuGetCommand@2
+  displayName: 'NuGet restore'
+  inputs:
+    restoreSolution: '$(solution)'
+    feedsToUse: 'config'
+    nugetConfigPath: 'nuget.config'
+
+- task: NuGetCommand@2
   displayName: 'Restore project dependencies'
   inputs:
     command: 'restore'

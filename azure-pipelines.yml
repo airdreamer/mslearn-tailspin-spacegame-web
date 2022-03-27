@@ -72,10 +72,10 @@ steps:
   inputs:
     outputfile: '$(Build.ArtifactStagingDirectory)/releasenotes.md'
     templateLocation: 'File'
-    templatefile: '$(System.DefaultWorkingDirectory)/template.hbs'
+    templatefile: '$(System.DefaultWorkingDirectory)/gitflow-template.hbs'
     customHandlebarsExtensionFile: 'custom.js'
     customHandlebarsExtensionFolder: '$(System.DefaultWorkingDirectory)'
-    
+
 # Generate Release Notes (Crossplatform)
 # Description - Generates a release notes file in a format of your choice from the build or release history
 # - task: XplatGenerateReleaseNotes@3

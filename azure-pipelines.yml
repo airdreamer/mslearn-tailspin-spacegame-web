@@ -62,25 +62,39 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+- task: Npm@1
+  inputs:
+    command: 'custom'
+    workingDir: '$(System.DefaultWorkingDirectory)'
+    customCommand: 'install handlebars'
+
+- task: XplatGenerateReleaseNotes@3
+  inputs:
+    outputfile: '$(Build.ArtifactStagingDirectory)/releasenotes.md'
+    templateLocation: 'File'
+    templatefile: '$(System.DefaultWorkingDirectory)/template.hbs'
+    customHandlebarsExtensionFile: 'custom.js'
+    customHandlebarsExtensionFolder: '$(System.DefaultWorkingDirectory)'
+    
 # Generate Release Notes (Crossplatform)
 # Description - Generates a release notes file in a format of your choice from the build or release history
-- task: XplatGenerateReleaseNotes@3
-  inputs: 
-     # Required arguments
-     outputfile: "rn.md"
-     templateLocation: File
-     templatefile: 
-     inlinetemplate: 
-     dumpPayloadToConsole: false
-     dumpPayloadToFile: false
-     replaceFile: True
-     appendToFile: True
-     getParentsAndChildren: False
-     getAllParents: False
-     getIndirectPullRequests: False
-     stopOnError: False
-     considerPartiallySuccessfulReleases: False
-     checkForManuallyLinkedWI: False
+# - task: XplatGenerateReleaseNotes@3
+#   inputs: 
+#      # Required arguments
+#      outputfile: "rn.md"
+#      templateLocation: File
+#      templatefile: 
+#      inlinetemplate: 
+#      dumpPayloadToConsole: false
+#      dumpPayloadToFile: false
+#      replaceFile: True
+#      appendToFile: True
+#      getParentsAndChildren: False
+#      getAllParents: False
+#      getIndirectPullRequests: False
+#      stopOnError: False
+#      considerPartiallySuccessfulReleases: False
+#      checkForManuallyLinkedWI: False
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'

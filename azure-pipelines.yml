@@ -62,6 +62,26 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
+# Generate Release Notes (Crossplatform)
+# Description - Generates a release notes file in a format of your choice from the build or release history
+- task: XplatGenerateReleaseNotes@3
+  inputs: 
+     # Required arguments
+     outputfile: 
+     templateLocation: File
+     templatefile: 
+     inlinetemplate: 
+     dumpPayloadToConsole: false
+     dumpPayloadToFile: false
+     replaceFile: True
+     appendToFile: True
+     getParentsAndChildren: False
+     getAllParents: False
+     getIndirectPullRequests: False
+     stopOnError: False
+     considerPartiallySuccessfulReleases: False
+     checkForManuallyLinkedWI: False
+
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: drop'
   condition: succeeded()

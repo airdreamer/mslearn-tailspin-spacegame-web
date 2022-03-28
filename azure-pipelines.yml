@@ -104,7 +104,7 @@ steps:
 - task: WikiUpdaterTask@1
   displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
   inputs:
-    repo: 'https://dev.azure.com/zhonghuihu/SpaceGame-Web-Pipeline/_wiki/wikis/SpaceGame-Web-Pipeline.wiki'
+    repo: 'SpaceGame-Web-Pipeline/_wiki/wikis/SpaceGame-Web-Pipeline.wiki'
     filename: release-notes.md
     contents: |
      Header
@@ -117,7 +117,7 @@ steps:
     gitemail: 'zhonghuihu@msn.com'
     user: zhonghuihu
     password: '$(AzureDevOpsPAT)'
-    localpath: '$(System.DefaultWorkingDirectory)\azurerepowithcreds'
+    localpath: '$(System.DefaultWorkingDirectory)/azurerepowithcreds'
 
 
 # Generate Release Notes (Crossplatform)

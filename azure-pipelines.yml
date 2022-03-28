@@ -101,10 +101,10 @@ steps:
 #     updateTasksVersion: true
 #     extensionVisibility: public
 
-- task: richardfennellBM.BM-VSTS-WIKIUpdater-Tasks-DEV.WikiUpdaterTask.WikiUpdaterTask@1
+- task: WikiUpdaterTask@1
   displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
   inputs:
-    repo: 'https://github.com/airdreamer/mslearn-tailspin-spacegame-web/tree/models-package'
+    repo: 'https://dev.azure.com/zhonghuihu/SpaceGame-Web-Pipeline/_wiki/wikis/SpaceGame-Web-Pipeline.wiki'
     filename: release-notes.md
     contents: |
      Header

@@ -104,7 +104,7 @@ steps:
 - task: WikiUpdaterTask@1
   displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
   inputs:
-    repo: 'SpaceGame-Web-Pipeline/_wiki/wikis/SpaceGame-Web-Pipeline.wiki'
+    repo: 'dev.azure.com/zhonghuihu/SpaceGame-Web-Pipeline/_wiki/wikis/SpaceGame-Web-Pipeline.wiki'
     filename: release-notes.md
     contents: |
      Header

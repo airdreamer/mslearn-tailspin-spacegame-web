@@ -116,7 +116,7 @@ steps:
     gitname: airdreamer
     gitemail: 'zhonghuihu@msn.com'
     user: zhonghuihu
-    password: '$(AzureDevOpsPAT)'
+    password: udsoboeefgs3ob7ps5ga2ef5mh4lxjriyffy337vp265mtbifkdq  #'$(AzureDevOpsPAT)'
     localpath: '$(System.DefaultWorkingDirectory)/azurerepowithcreds'
 
 

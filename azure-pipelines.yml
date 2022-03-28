@@ -85,23 +85,23 @@ steps:
     customHandlebarsExtensionFile: 'custom.js'
     customHandlebarsExtensionFolder: '$(System.DefaultWorkingDirectory)'
 
-# - task: richardfennellBM.BM-VSTS-WIKIUpdater-Tasks-DEV.WikiUpdaterTask.WikiUpdaterTask@1
-#   displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
-#   inputs:
-#     repo: 'dev.azure.com/richardfennell/Git%20project/_git/Git-project.wiki'
-#     filename: TestPageWithCreds.md
-#     contents: |
-#      Header
-#      ---
-#      $(OutputText)
-#      ---
-#      Footer
-#     message: 'Update from Release - $(Release.ReleaseName) with Creds'
-#     gitname: builduser
-#     gitemail: 'build@demo'
-#     user: richardfennell
-#     password: '$(AzureDevOpsPAT)'
-#     localpath: '$(System.DefaultWorkingDirectory)\azurerepowithcreds'
+- task: richardfennellBM.BM-VSTS-WIKIUpdater-Tasks-DEV.WikiUpdaterTask.WikiUpdaterTask@1
+  displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
+  inputs:
+    repo: 'https://github.com/airdreamer/mslearn-tailspin-spacegame-web/tree/models-package'
+    filename: release-notes.md
+    contents: |
+     Header
+     ---
+     $(OutputText)
+     ---
+     Footer
+    message: 'Update from Release - $(Release.ReleaseName) with Creds'
+    gitname: airdreamer
+    gitemail: 'zhonghuihu@msn.com'
+    user: zhonghuihu
+    password: '$(AzureDevOpsPAT)'
+    localpath: '$(System.DefaultWorkingDirectory)\azurerepowithcreds'
 
 
 # Generate Release Notes (Crossplatform)

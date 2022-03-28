@@ -85,6 +85,22 @@ steps:
     customHandlebarsExtensionFile: 'custom.js'
     customHandlebarsExtensionFolder: '$(System.DefaultWorkingDirectory)'
 
+# - task: TfxInstaller@3
+#   displayName: 'Install Tfx Tool'
+#   inputs:
+#     version: 'v0.8.x'
+
+# - task: ms-devlabs.vsts-developer-tools-build-tasks.package-extension-build-task.PackageVSTSExtension@3
+#   displayName: 'Package and Publish Extension as a PROD Package '
+#   inputs:
+#     rootFolder: '$(ExtensionRoot)'
+#     outputPath: '$(Build.ArtifactStagingDirectory)\\$(artifactLocationName)'
+#     publisherId: '$(PublisherID)'
+#     extensionId: '$(ExtensionID)'
+#     extensionVersion: '$(Build.BuildNumber)'
+#     updateTasksVersion: true
+#     extensionVisibility: public
+
 - task: richardfennellBM.BM-VSTS-WIKIUpdater-Tasks-DEV.WikiUpdaterTask.WikiUpdaterTask@1
   displayName: 'Git based WIKI Updater - Azure DevOps with Creds'
   inputs:
